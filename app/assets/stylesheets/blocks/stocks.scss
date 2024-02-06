@@ -1,0 +1,55 @@
+#stocks {
+  .stocks-before {
+    content: '';
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 50% 100%);
+    background: rgb(97, 196, 235);
+    background: linear-gradient(90deg, rgba(97, 196, 235, 1) 0%, rgba(73, 65, 145, 1) 100%);
+    position: absolute;
+    width: 85px;
+    height: 75px;
+    z-index: 1;
+    opacity: 85%;
+    right: 120px;
+    top: -25px;
+  }
+
+  .container {
+    h1 {
+      text-align: right;
+    }
+
+    .list-items {
+      margin-bottom: 90px;
+
+      .info-block {
+        padding: 50px;
+        text-align: center;
+        text-transform: uppercase;
+        color: white;
+        margin-bottom: 24px;
+        font-size: 20px;
+
+        &.gradient-red {
+          background: rgb(226, 14, 23);
+          background: linear-gradient(90deg, rgba(180, 19, 84, 1) 0%, rgba(226, 14, 23, 1) 100%);
+        }
+
+        &.gradient-blue {
+          background: rgb(97, 196, 235);
+          background: linear-gradient(90deg, rgba(97, 196, 235, 1) 0%, rgba(73, 65, 145, 1) 100%);
+        }
+      }
+    }
+
+    .and-plus {
+      a {
+        clip-path: polygon(0 0, 95% 0, 100% 50%, 5% 50%);
+        width: 35%;
+        height: 100px;
+        line-height: 50px;
+        font-size: 30px !important;
+        display: inline-block;
+      }
+    }
+  }
+}

@@ -1,0 +1,239 @@
+@import "../fonts";
+
+#main {
+  .red-lines__bg {
+    background: url(red-lines__bg.png) top left no-repeat;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-size: contain;
+  }
+
+  .navbar {
+    background: transparent !important;
+
+    .navbar-brand {
+      padding: unset;
+      width: 150px;
+      margin: 60px 40px 25px 65px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .navbar-nav {
+      .nav-item {
+        &.cart {
+          background: rgb(97, 196, 235);
+          background: linear-gradient(90deg, rgba(97, 196, 235, 1) 0%, rgba(73, 65, 145, 1) 100%);
+          border-radius: 50%;
+          margin-left: 20px;
+          position: relative;
+
+          .nav-link {
+            background-image: url(icon-cart.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 30px;
+            padding: 25px;
+
+            .counter {
+              position: absolute;
+              font-family: 'RobotoSlab Thin';
+              background-color: #E52521;
+              border-radius: 50%;
+              width: 15px;
+              height: 15px;
+              text-align: center;
+              vertical-align: middle;
+              color: #fff;
+              line-height: 15px;
+              font-size: 12px;
+              top: 10px;
+              right: 10px;
+            }
+          }
+        }
+
+        .nav-link {
+          color: #616365;
+          text-transform: uppercase;
+          font-family: 'RobotoSlab Bold';
+          padding-left: 20px;
+          padding-right: 20px;
+          font-size: 20px;
+
+          &.active,
+          &:hover {
+            color: black;
+          }
+        }
+      }
+    }
+  }
+
+  .col-6 {
+    &:first-child {
+      position: relative;
+    }
+
+    .main-title {
+      margin: 35px 0 0 80px;
+
+      p {
+        margin: unset;
+        font-family: 'RobotoSlab Bold';
+        text-transform: uppercase;
+        line-height: 50px;
+        font-size: 45px;
+      }
+    }
+
+    .main-description {
+      padding: 60px 0 0 80px;
+      background: url(triangle-white.png) no-repeat;
+      background-size: contain;
+      background-position-x: 35px;
+      background-position-y: 40px;
+
+      p {
+        font-family: 'RobotoSlab Thin';
+        font-size: 30px;
+        line-height: 34px;
+        margin: unset;
+      }
+    }
+
+    .choose-boiler {
+      text-align: left;
+      margin: 50px 0 0 100px;
+    }
+
+    .main-triangle__red {
+      clip-path: polygon(50% 0, 50% 0, 100% 100%, 0 100%);
+      background: rgb(226, 14, 23);
+      background: linear-gradient(90deg, rgba(226, 14, 23, 1) 0%, rgba(180, 19, 84, 1) 100%);
+      position: absolute;
+      right: 75px;
+      width: 85px;
+      height: 75px;
+      bottom: 30px;
+    }
+
+    .main-contacts {
+      font-family: 'RobotoSlab Thin';
+      font-size: 24px;
+      margin-top: 35px;
+      position: relative;
+      z-index: 1;
+
+      .email, .phone, .address {
+        position: relative;
+        margin-bottom: 5px;
+      }
+
+      .email {
+        &:before {
+          background-image: url(icon-email.png);
+        }
+      }
+
+      .phone {
+        &:before {
+          background-image: url(icon-phone.png);
+        }
+      }
+
+      .address {
+        &:before {
+          background-image: url(icon-address.png);
+        }
+
+        span {
+          display: block;
+        }
+      }
+
+      div {
+        &:before {
+          content: " ";
+          background-repeat: no-repeat;
+          background-size: contain;
+          position: absolute;
+          width: 35px;
+          height: 35px;
+          left: -50px;
+          top: 3px;
+        }
+      }
+    }
+
+    .geliss {
+      background: url(geliss.png) no-repeat;
+      position: absolute;
+      width: 560px;
+      height: 560px;
+      background-size: contain;
+      bottom: 0;
+      opacity: 85%;
+      right: 180px;
+      z-index: 0;
+    }
+
+    .coal {
+      background: url(coal.png) no-repeat;
+      background-size: contain;
+      position: absolute;
+      width: 300px;
+      height: 260px;
+      z-index: 1;
+      right: 0;
+      bottom: 0;
+    }
+
+    .right-elem {
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 0 100%);
+      background: rgb(97, 196, 235);
+      background: linear-gradient(90deg, rgba(97, 196, 235, 1) 0%, rgba(73, 65, 145, 1) 100%);
+      width: 230px;
+      height: 400px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      opacity: 85%;
+    }
+
+    .white-line {
+      background: url(white-line.png) no-repeat;
+      background-size: contain;
+      position: absolute;
+      width: 100px;
+      height: 155px;
+      right: 200px;
+      bottom: 215px;
+      z-index: 1;
+    }
+
+    .red-line__right {
+      background: url(red-line_short.png) no-repeat;
+      background-size: contain;
+      position: absolute;
+      width: 144px;
+      height: 225px;
+      right: 125px;
+      bottom: 110px;
+    }
+
+    .red-line__left {
+      background: url(red-line_short.png) no-repeat;
+      background-size: contain;
+      position: absolute;
+      width: 144px;
+      height: 225px;
+      right: 350px;
+      bottom: 90px;
+    }
+  }
+}

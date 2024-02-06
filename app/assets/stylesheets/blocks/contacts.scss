@@ -1,0 +1,85 @@
+#contacts {
+  font-family: 'RobotoSlab Thin';
+  position: relative;
+
+  .contacts-before {
+    content: '';
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 50% 100%);
+    background: rgb(226, 14, 23);
+    background: linear-gradient(90deg, rgba(180, 19, 84, 1) 0%, rgba(226, 14, 23, 1) 100%);
+    position: absolute;
+    width: 85px;
+    height: 75px;
+    z-index: 1;
+    opacity: 85%;
+    right: 120px;
+    top: -25px;
+  }
+
+  .container {
+    h1 {
+      text-align: center;
+    }
+
+    .subtitle {
+      font-family: 'RobotoSlab Regular';
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin: unset;
+      font-size: 24px;
+    }
+
+    .info-main, .info-additionally, .info-feedback {
+      margin-bottom: 25px;
+    }
+
+    .info-feedback {
+      form {
+        border: 2px #303335 solid;
+        padding: 25px;
+        text-align: right;
+
+        input, textarea {
+          &:focus {
+            box-shadow: unset;
+          }
+        }
+
+        input, textarea, button {
+          border-radius: unset;
+          border: 2px #303335 solid;
+          background: transparent;
+        }
+      }
+    }
+
+    .info-social {
+      a {
+        display: block;
+        color: #303335;
+        margin: unset;
+        text-decoration: none;
+        font-size: 24px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .map-wrapper {
+      border: 10px solid;
+      border-image-slice: 1;
+      border-width: 5px;
+      border-image-source: linear-gradient(to left, #686cab, #d26456);
+      padding: 20px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 30px 0;
+    }
+  }
+}
