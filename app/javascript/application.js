@@ -1,4 +1,3 @@
-// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-
-// import "popper"
-import "bootstrap"
+//= require_tree ./application
+//= import "popper"
+//= import "bootstrap"
