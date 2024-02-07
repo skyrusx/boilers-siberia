@@ -76,4 +76,6 @@ Rails.application.configure do
 
   config.assets.enabled = true
   config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

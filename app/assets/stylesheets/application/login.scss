@@ -1,0 +1,18 @@
+.container-login {
+  height: 100vh;
+
+  .row {
+    height: 100%;
+
+    .wrapper-form {
+      padding: 25px;
+      background-color: #000;
+      border-radius: 10px;
+      color: #777777;
+
+      .form-check {
+        text-align: left;
+      }
+    }
+  }
+}
