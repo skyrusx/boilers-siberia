@@ -70,7 +70,7 @@
     }
 
     .list-products {
-      .col-3 {
+      .wrapper-block {
         &:first-child {
           .product-block {
             &:before {
@@ -92,7 +92,7 @@
     }
 
     .list-services {
-      .col-3 {
+      .wrapper-block {
         &:nth-child(3) {
           .service-block {
             &:before {
@@ -161,6 +161,68 @@
         line-height: 50px;
         font-size: 30px !important;
         display: inline-block;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  #catalog {
+    background: unset;
+
+    .catalog-greyline, .catalog-whiteline {
+      display: none;
+    }
+
+    .wrapper-right {
+      height: calc(50% + 65px);
+    }
+
+    .container {
+      .list-products {
+        .wrapper-block {
+          &:first-child {
+            .product-block {
+              &:before {
+                width: 52px;
+                height: 45px;
+                bottom: -30px;
+                right: -10px;
+              }
+            }
+          }
+
+          .product-block {
+            margin: 15px;
+          }
+        }
+      }
+
+      .list-services {
+        .wrapper-block {
+          &:nth-child(3) {
+            .service-block {
+              &:before {
+                width: 52px;
+                height: 45px;
+                right: -25px;
+                top: -25px;
+              }
+            }
+          }
+
+          .service-block {
+            margin: 15px;
+          }
+        }
+      }
+
+      .get-feedback {
+        a {
+          font-size: 18px !important;
+          width: 300px;
+          margin-top: 35px;
+        }
       }
     }
   }
