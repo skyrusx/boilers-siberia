@@ -3,6 +3,7 @@
 body {
   font-family: 'RobotoSlab Regular';
   color: #303335;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -61,4 +62,53 @@ h1 {
 #reviews .list-items,
 #stocks .list-items {
   margin: 60px 0;
+}
+
+@media (max-width: 767px) {
+  #main, #about, #reviews, #recommend, #stocks, #support {
+    height: 100%;
+  }
+
+  h1 {
+    text-align: center !important;
+    padding: 50px 0 20px 0;
+  }
+
+  #about {
+    h1 {
+      padding: 25px 0;
+    }
+  }
+
+  #about .list-items, #reviews .list-items, #stocks .list-items {
+    margin: unset;
+  }
+
+  .catalog-before, .reviews-before, .recommend-before, .stocks-before, .support-before, .contacts-before {
+    left: 0 !important;
+    right: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #catalog, #recommend, #support {
+    .wrapper-left {
+      clip-path: polygon(0 0, 100% 0, 100% 98%, 0% 100%) !important;
+      width: calc(100% - 20px) !important;
+      height: calc(50% - 20px) !important;
+      left: 10px !important;
+      right: 10px !important;
+      top: 10px !important;
+      bottom: unset !important;
+    }
+
+    .wrapper-right {
+      clip-path: polygon(0 2%, 100% 0, 100% 100%, 0% 100%) !important;
+      width: 100% !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      top: unset !important;
+    }
+  }
 }
