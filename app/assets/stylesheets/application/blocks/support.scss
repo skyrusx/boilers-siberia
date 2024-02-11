@@ -81,3 +81,41 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  #support {
+    background: unset;
+    text-align: center;
+
+    .wrapper-right {
+      height: calc(50% + 20px);
+    }
+
+    .container {
+      .subtitle {
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+
+      .instructions, .info, .files {
+        margin-bottom: 50px;
+
+        a {
+          font-size: 16px;
+          margin-bottom: 5px;
+        }
+      }
+
+      .your-question {
+        text-align: center;
+        
+        a {
+          font-size: 18px !important;
+          width: 300px;
+          background: #61c4eb;
+          background: linear-gradient(90deg, #61c4eb 0%, #494191 100%);
+        }
+      }
+    }
+  }
+}
