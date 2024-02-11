@@ -65,3 +65,17 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  #recommend {
+    background: unset;
+
+    .wrapper-right {
+      height: calc(50% + 22px);
+    }
+
+    .list-advantages {
+      padding-bottom: 30px;
+    }
+  }
+}
