@@ -23,18 +23,23 @@
     .navbar-nav {
       .nav-item {
         &.cart {
-          background: rgb(97, 196, 235);
-          background: linear-gradient(90deg, rgba(97, 196, 235, 1) 0%, rgba(73, 65, 145, 1) 100%);
-          border-radius: 50%;
-          margin-left: 20px;
-          position: relative;
-
           .nav-link {
-            background-image: url(icon-cart.png);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 30px;
-            padding: 25px;
+            background: rgb(97, 196, 235);
+            background: linear-gradient(90deg, rgba(97, 196, 235, 1) 0%, rgba(73, 65, 145, 1) 100%);
+            border-radius: 50%;
+            margin-left: 20px;
+            position: relative;
+            padding: 10px 0;
+            width: 50px;
+
+            &:before {
+              content: '';
+              background-image: url(icon-cart.png);
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: 30px;
+              padding: 25px;
+            }
 
             .counter {
               position: absolute;
@@ -261,8 +266,28 @@
         margin: unset;
       }
 
-      .navbar-toggler {
+      .navbar-nav {
+        .nav-item {
+          &.cart {
+            text-align: center;
 
+            .nav-link {
+              display: inline-block;
+              margin: unset;
+              width: 44px;
+
+              &:before {
+                padding: 12px 22px;
+              }
+            }
+          }
+
+          .nav-link {
+            font-size: 16px;
+            padding: 5px;
+            text-align: center;
+          }
+        }
       }
     }
 
