@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
   def landing
-    @social_links = SocialLink.all
+    @advantages = Advantage.all
     @contacts = Contact.order("region DESC")
     @main_contact = @contacts.first
+    @social_links = SocialLink.all
   end
 end

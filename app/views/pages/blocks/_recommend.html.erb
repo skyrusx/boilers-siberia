@@ -9,40 +9,22 @@
     <h1 class="title">Почему нас рекомендуют друзьям <span>и выбирают вот уже ... лет подряд</span></h1>
 
     <div class="row align-items-start list-advantages">
-      <div class="col-sm-12 col-md-6 wrapper-item">
-        <div class="item-advantage">
-          <p class="subtitle">1</p>
-          <p class="subtitle">Проектирование</p>
-          <p>Как известно все познается в сравнении, посчитайте, сколько времени уходит на обслуживание «стандартного</p>
+      <%
+        groups = (@advantages.size % 2).zero? ? @advantages.size / 2 : @advantages.size / 2 + 1
+        index = 1
+      %>
+      <% @advantages.in_groups_of(groups, false).each do |arr| %>
+        <div class="col-sm-12 col-md-6 wrapper-item">
+          <% arr.each do |advantage| %>
+            <div class="item-advantage">
+              <p class="subtitle"><%= index %></p>
+              <p class="subtitle"><%= advantage.title %></p>
+              <p><%= advantage.description %></p>
+            </div>
+            <% index += 1 %>
+          <% end %>
         </div>
-        <div class="item-advantage">
-          <p class="subtitle">2</p>
-          <p class="subtitle">Производство</p>
-          <p>Как известно все познается в сравнении, посчитайте, сколько времени уходит на</p>
-        </div>
-        <div class="item-advantage">
-          <p class="subtitle">3</p>
-          <p class="subtitle">Контроль качества</p>
-          <p>Как известно все познается в сравнении, посчитайте, сколько времени уходит на готовую видеозапись....</p>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-6 wrapper-item">
-        <div class="item-advantage">
-          <p class="subtitle">4</p>
-          <p class="subtitle">Хранение</p>
-          <p>Как известно все познается в сравнении, посчитайте, сколько времени уходит на</p>
-        </div>
-        <div class="item-advantage">
-          <p class="subtitle">5</p>
-          <p class="subtitle">Логистика</p>
-          <p>Как известно все познается в сравнении, посчитайте, сколько времени уходит на</p>
-        </div>
-        <div class="item-advantage">
-          <p class="subtitle">6</p>
-          <p class="subtitle">Обслуживание</p>
-          <p>Как известно все познается в сравнении, посчитайте, сколько времени уходит на</p>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </section>
