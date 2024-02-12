@@ -28,6 +28,9 @@ ru:
       advantage:
         title: Название
         description: Описание
+      social_link:
+        title: Название
+        link: ссылка
     models:
       user:
         few: Пользователя
