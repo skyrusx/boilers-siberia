@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_07_061550) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_11_150021) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
   enable_extension "pg_trgm"
@@ -77,6 +77,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_07_061550) do
     t.bigint "history_municipal_formation_id"
     t.boolean "access_to_surveys", default: false
     t.boolean "is_active", default: true, null: false
+  end
+
+  create_table "advantages", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "blazer_audits", id: false, force: :cascade do |t|

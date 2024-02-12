@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :admin, only: :index
+  scope :admin do
+    resources :advantages, except: :show
+  end
 end
