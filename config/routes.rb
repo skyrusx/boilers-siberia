@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   resources :admin, only: :index
   scope :admin do
     resources :advantages, except: :show
+    resources :social_links, except: :show
   end
 end

@@ -1,0 +1,41 @@
+<div>
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="mb-2 mb-lg-0">
+      <h3 class="mb-0 text-white">Социальные ссылки</h3>
+    </div>
+    <div>
+      <%= link_to "Создать", new_social_link_path, class: "btn btn-light" %>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">Список</div>
+  <div class="card-body">
+    <% if @links.present? %>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Название</th>
+          <th scope="col">Ссылка</th>
+          <th colspan="2" scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @links.each.with_index(1) do |social_link, index| %>
+          <tr>
+            <td><%= index %></td>
+            <td><%= social_link.title %></td>
+            <td><%= link_to social_link.link, social_link.link, target: "_blank" %></td>
+            <td><%= link_to "Редактировать", edit_social_link_path(social_link), class: "btn btn-primary" %></td>
+            <td><%= link_to "Удалить", social_link_path(social_link), class: "btn btn-danger", method: :delete, data: { confirm: "Вы уверены?" } %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <div class="alert alert-primary text-center" role="alert">Упс! Данные не найдены.</div>
+    <% end %>
+  </div>
+</div>
