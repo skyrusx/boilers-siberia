@@ -1,0 +1,20 @@
+.bg-light {
+  background-color: #f1f5f9;
+
+  .page-content {
+    .bg-primary {
+      background: #624bff;
+      padding-bottom: 9.5rem;
+      padding-top: 4rem;
+    }
+
+    &__wrapper {
+      padding: 0 2rem;
+      margin-top: -10rem;
+    }
+
+    .card {
+      margin-top: 2rem;
+    }
+  }
+}
