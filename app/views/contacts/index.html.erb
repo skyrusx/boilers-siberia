@@ -1,0 +1,55 @@
+<div>
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="mb-2 mb-lg-0">
+      <h3 class="mb-0 text-white">Контакты</h3>
+    </div>
+    <div>
+      <%= link_to "Создать", new_contact_path, class: "btn btn-light" %>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">Список</div>
+  <div class="card-body">
+    <% if @contacts.present? %>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Регион</th>
+          <th scope="col">Представитель</th>
+          <th scope="col">Адрес</th>
+          <th scope="col">Номер телефона</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Режим работы</th>
+          <th colspan="2" scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @contacts.each.with_index(1) do |contact, index| %>
+          <tr>
+            <td><%= index %></td>
+            <td><%= contact.region %></td>
+            <td><%= contact.representative %></td>
+            <td><%= contact.address %></td>
+            <td>
+              <div><%= contact.phone %></div>
+              <div><%= contact.phone_other %></div>
+            </td>
+            <td><%= contact.email %></td>
+            <td>
+              <div><%= contact.working_hours_weekdays %></div>
+              <div><%= contact.working_hours_weekends %></div>
+            </td>
+            <td><%= link_to "Редактировать", edit_contact_path(contact), class: "btn btn-primary" %></td>
+            <td><%= link_to "Удалить", contact_path(contact), class: "btn btn-danger", method: :delete, data: { confirm: "Вы уверены?" } %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <div class="alert alert-primary text-center" role="alert">Упс! Данные не найдены.</div>
+    <% end %>
+  </div>
+</div>

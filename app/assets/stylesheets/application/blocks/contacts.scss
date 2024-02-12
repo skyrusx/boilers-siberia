@@ -29,9 +29,13 @@
     p {
       margin: unset;
       font-size: 24px;
+
+      &.representative, &.address {
+        font-size: 20px;
+      }
     }
 
-    .info-main, .info-additionally, .info-feedback {
+    .contact-info, .info-feedback {
       margin-bottom: 25px;
     }
 
@@ -40,6 +44,7 @@
         border: 2px #303335 solid;
         padding: 25px;
         text-align: right;
+        font-family: 'RobotoSlab Regular';
 
         input {
           width: 50%;

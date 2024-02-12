@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_12_163541) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_12_175050) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
   enable_extension "pg_trgm"
@@ -224,6 +224,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_12_163541) do
     t.uuid "profile_id"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "region"
+    t.string "representative"
+    t.string "address"
+    t.string "phone"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "phone_other"
+    t.string "working_hours_weekdays"
+    t.string "working_hours_weekends"
   end
 
   create_table "culture_object_attachments", id: false, force: :cascade do |t|

@@ -7,22 +7,28 @@
 
     <div class="row align-items-start">
       <div class="col">
-        <div class="info-main">
-          <p class="subtitle">Кузбасс (Кузнецкий пр-т, 141/1)</p>
-          <p>8 800 222-41-43</p>
-          <p>7 983 210 0591 рук-ль (Wts+ Tlg)</p>
-          <p>7 951 608 47 44 мен-р (Wts+ Tlg)</p>
-          <p>sales.kotelsib@ya.ru</p>
-          <p>08:00-17:00 (обед 12:00-13:00)</p>
-        </div>
-
-        <div class="info-additionally">
-          <p class="subtitle">Алтай</p>
-          <p>Телефон рук-ля (Wts+ Tlg)</p>
-          <p>Телефон менеджера</p>
-          <p>Почта</p>
-          <p>Режим работы</p>
-        </div>
+        <% @contacts.each do |contact| %>
+          <div class="contact-info">
+            <p class="subtitle"><%= contact.region %></p>
+            <% if contact.representative.present? %>
+              <p class="subtitle representative"><%= contact.representative %></p>
+            <% end %>
+            <p class="subtitle address"><%= contact.address %></p>
+            <p><%= contact.phone %></p>
+            <% if contact.phone_other.present? %>
+              <p><%= contact.phone_other %></p>
+            <% end %>
+            <% if contact.email.present? %>
+              <p><%= contact.email %></p>
+            <% end %>
+            <% if contact.working_hours_weekdays.present? %>
+              <p><%= contact.working_hours_weekdays %></p>
+            <% end %>
+            <% if contact.working_hours_weekends.present? %>
+              <p><%= contact.working_hours_weekends %></p>
+            <% end %>
+          </div>
+        <% end %>
       </div>
 
       <div class="col">
