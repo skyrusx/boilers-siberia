@@ -32,8 +32,10 @@ gem "bootsnap", require: false
 gem "jquery-rails"
 gem "bootstrap", "~> 5.3", ">= 5.3.2"
 gem "sassc-rails"
-gem 'devise'
+gem "devise"
 gem "rubocop"
+gem "rails-i18n", "~> 7.0", ">= 7.0.8"
+gem "russian"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
