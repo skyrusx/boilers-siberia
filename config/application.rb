@@ -25,5 +25,6 @@ module App
     # config.eager_load_paths << Rails.root.join("extras")
 
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.i18n.default_locale = :ru
   end
 end
