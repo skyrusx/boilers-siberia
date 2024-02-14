@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     resources :advantages, except: :show
     resources :social_links, except: :show
     resources :contacts, except: :show
+    resources :activities, except: :show
   end
 end
