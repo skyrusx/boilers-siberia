@@ -15,6 +15,47 @@
 
     .card {
       margin-top: 2rem;
+
+      .card-body {
+        .table {
+          tbody {
+            tr {
+              td {
+                &:last-child, &:nth-last-child(2) {
+                  text-align: center;
+                  width: 10%;
+                }
+
+                img {
+                  max-height: 75px;
+                  width: auto;
+                }
+              }
+            }
+          }
+        }
+
+        form {
+          .img-wrapper {
+            .img-thumbnail {
+              width: 100%;
+              text-align: center;
+
+              img {
+                max-width: 100%;
+              }
+            }
+
+            .btn {
+              &.btn-light {
+                label {
+                  margin: unset;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
