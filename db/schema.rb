@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_15_044005) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_15_165440) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
   enable_extension "pg_trgm"
@@ -170,6 +170,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_15_044005) do
     t.string "data_source"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
+  end
+
+  create_table "bonuses", force: :cascade do |t|
+    t.string "text"
+    t.boolean "show_text", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "building_object_attachments", id: false, force: :cascade do |t|

@@ -1,0 +1,43 @@
+<div>
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="mb-2 mb-lg-0">
+      <h3 class="mb-0 text-white">Бонусы></h3>
+    </div>
+    <div>
+      <%= link_to "Создать", new_bonuse_path, class: "btn btn-light" %>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">Список</div>
+  <div class="card-body">
+    <% if @bonuses.present? %>
+      <table class="table table-striped align-middle text-center">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Баннер</th>
+          <th scope="col">Текст</th>
+          <th scope="col">Показывать текст</th>
+          <th colspan="2" scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @bonuses.each.with_index(1) do |bonus, index| %>
+          <tr>
+            <td><%= index %></td>
+            <td><%= image_tag(bonus.banner) if bonus.banner.attached? %></td>
+            <td><%= bonus.text %></td>
+            <td><%= bonus.show_text ? "Да" : "Нет" %></td>
+            <td><%= link_to "Редактировать", edit_bonuse_path(bonus), class: "btn btn-primary" %></td>
+            <td><%= link_to "Удалить", bonuse_path(bonus), class: "btn btn-danger", method: :delete, data: { confirm: "Вы уверены?" } %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <div class="alert alert-primary text-center" role="alert">Упс! Данные не найдены.</div>
+    <% end %>
+  </div>
+</div>

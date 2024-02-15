@@ -15,5 +15,6 @@ Rails.application.routes.draw do
     resources :contacts, except: :show
     resources :activities, except: :show
     resources :reviews, except: :show
+    resources :bonuses, except: :show
   end
 end

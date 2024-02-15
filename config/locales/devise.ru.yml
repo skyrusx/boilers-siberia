@@ -31,6 +31,32 @@ ru:
       social_link:
         title: Название
         link: ссылка
+      contact:
+        region: Регион
+        representative: Представитель
+        address: Адрес
+        phone: Номер телефона
+        phone_other: Номер телефона (Дополнительный)
+        email: E-mail
+        working_hours_weekdays: Режим работы (будние)
+        working_hours_weekends: Режим работы (выходные)
+      message:
+        type: Тип
+        name: ФИО
+        phone: Телефон
+        question: Вопрос
+      activity:
+        icon: Картинка
+        info: Описание
+      review:
+        name: Имя
+        text: Текст
+        link: Ссылка на соц. сеть
+        avatar: Аватар
+      bonuse:
+        banner: Баннер
+        text: Текст
+        show_text: Показывать текст
     models:
       user:
         few: Пользователя
