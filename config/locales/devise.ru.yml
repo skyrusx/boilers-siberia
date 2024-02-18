@@ -57,6 +57,13 @@ ru:
         banner: Баннер
         text: Текст
         show_text: Показывать текст
+      group:
+        title: Название
+      support:
+        title: Название
+        link: Ссылка
+        file: Файл
+        group_id: Группа
     models:
       user:
         few: Пользователя
