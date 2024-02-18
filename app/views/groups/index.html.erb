@@ -1,0 +1,40 @@
+<div>
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="mb-2 mb-lg-0">
+      <h3 class="mb-0 text-white">Группы</h3>
+    </div>
+    <div>
+      <%= link_to "Поддержка", supports_path, class: "btn btn-light" %>
+      <%= link_to "Создать", new_group_path, class: "btn btn-light" %>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">Список</div>
+  <div class="card-body">
+    <% if @groups.present? %>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Название</th>
+          <th colspan="2" scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @groups.each.with_index(1) do |group, index| %>
+          <tr>
+            <td><%= index %></td>
+            <td><%= group.title %></td>
+            <td><%= link_to "Редактировать", edit_group_path(group), class: "btn btn-primary" %></td>
+            <td><%= link_to "Удалить", group_path(group), class: "btn btn-danger", method: :delete, data: { confirm: "Вы уверены?" } %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <div class="alert alert-primary text-center" role="alert">Упс! Данные не найдены.</div>
+    <% end %>
+  </div>
+</div>
