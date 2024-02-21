@@ -17,9 +17,10 @@ Rails.application.routes.draw do
     resources :reviews, except: :show
     resources :bonuses, except: :show
     resources :supports, except: :show, path: :support
-
     scope :support do
       resources :groups, except: :show
     end
+
+    resources :products, except: :show
   end
 end

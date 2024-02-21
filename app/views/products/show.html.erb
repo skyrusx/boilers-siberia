@@ -1,0 +1,70 @@
+<!-- Main -->
+<section id="main" class="main-page">
+  <div class="red-lines__bg"></div>
+  <div class="red-lines__bg-mirror"></div>
+
+  <%= render "pages/shared/menu" %>
+</section>
+<!-- Main -->
+
+<!-- Product -->
+<section id="product">
+  <div class="wrapper-left"></div>
+  <div class="wrapper-right"></div>
+
+  <div class="container">
+    <div class="row">
+      <h1 class="title"><%= @product.title %></h1>
+
+      <div class="col-md-5">
+        <div class="product-image">
+          <%= image_tag(@product.image) %>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div class="product-info">
+          <div class="product-price">
+            <del><%= @product.old_price %> ₽</del>
+            <ins><%= @product.price %> ₽</ins>
+          </div>
+
+          <div class="line"></div>
+
+          <%= form_with model: @order_item, class: "cart mb-0 d-flex justify-content-between align-items-center" do |f| %>
+            <div class="quantity">
+              <%= f.hidden_field :product_id, value: @product.id %>
+              <%= button_tag "-", type: "button", class: "minus" %>
+              <%= f.number_field :quantity, value: 1, min: 1, class: "qty" %>
+              <%= button_tag "+", type: "button", class: "plus" %>
+            </div>
+            <%= f.submit "В корзину", class: "btn btn-primary add-to-cart" %>
+          <% end %>
+
+          <div class="line"></div>
+
+          <div class="product-desc">
+            <%= @product.description %>
+          </div>
+
+          <div class="card product-meta">
+            <div class="card-body">
+              <span itemprop="productID" class="sku_wrapper">SKU: <span class="sku">8465415</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Product -->
+
+<!-- Contacts -->
+<section id="contacts">
+  <div class="container">
+    <div class="row align-items-start">
+      <div class="footer">
+        <p>© <%= Date.today.year %></p>
+      </div>
+    </div>
+  </div>
+</section>

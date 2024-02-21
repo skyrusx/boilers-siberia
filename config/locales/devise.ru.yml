@@ -64,6 +64,14 @@ ru:
         link: Ссылка
         file: Файл
         group_id: Группа
+      product:
+        title: Название
+        old_price: Старая цена
+        price: Цена
+        description: Описание
+        sku: SKU
+        product_type: Тип
+        image: Картинка
     models:
       user:
         few: Пользователя

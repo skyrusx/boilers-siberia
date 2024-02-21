@@ -1,0 +1,44 @@
+<%= form_with model: @product do |form| %>
+  <div class="mb-3">
+    <%= form.label :product_type, class: "form-label" %>
+    <%= form.select(:product_type, Product::TYPES, {}, { class: "form-control", selected: @product.product_type || Product::TYPES.first }) %>
+  </div>
+  <div class="col-md-3 mb-3 img-wrapper">
+    <%= label_tag "Картинка", nil, class: "form-label" %>
+
+    <div class="mb-4 d-flex justify-content-center">
+      <div class="img-thumbnail w-100">
+        <%= image_tag(@product.image, id: "selected_image") if @product.image.attached? %>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <div class="btn btn-light">
+        <%= form.label :image, "Выберите файл", class: "form-label" %>
+        <%= form.file_field :image, class: "form-control d-none", onchange: "displaySelectedImage(event, 'selected_image')" %>
+      </div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :old_price, class: "form-label" %>
+    <%= form.text_field :old_price, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :price, class: "form-label" %>
+    <%= form.text_field :price, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :description, class: "form-label" %>
+    <%= form.text_area :description, rows: 5, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :sku, class: "form-label" %>
+    <%= form.text_field :sku, class: "form-control" %>
+  </div>
+  <div>
+    <%= form.submit "Сохранить", class: "btn btn-primary" %>
+  </div>
+<% end %>
