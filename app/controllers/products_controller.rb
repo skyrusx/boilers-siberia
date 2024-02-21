@@ -8,7 +8,10 @@ class ProductsController < AdminController
 
   def show
     @product = Product.find(params[:id])
-    @order_item = current_order.order_items.new
+    @order_item = OrderItem.where(product_id: @product.id).first
+    unless @order_item.present?
+      @order_item = current_order.order_items.new
+    end
   end
 
   def new

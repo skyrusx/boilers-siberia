@@ -30,14 +30,20 @@
 
           <div class="line"></div>
 
-          <%= form_with model: @order_item, class: "cart mb-0 d-flex justify-content-between align-items-center" do |f| %>
-            <div class="quantity">
-              <%= f.hidden_field :product_id, value: @product.id %>
-              <%= button_tag "-", type: "button", class: "minus" %>
-              <%= f.number_field :quantity, value: 1, min: 1, class: "qty" %>
-              <%= button_tag "+", type: "button", class: "plus" %>
+          <% if @order_item.new_record? %>
+            <%= form_with model: @order_item, class: "cart mb-0 d-flex justify-content-between align-items-center" do |f| %>
+              <div class="quantity">
+                <%= f.hidden_field :product_id, value: @product.id %>
+                <%= button_tag "-", type: "button", class: "minus" %>
+                <%= f.number_field :quantity, value: 1, min: 1, class: "qty" %>
+                <%= button_tag "+", type: "button", class: "plus" %>
+              </div>
+              <%= f.submit "Купить", class: "btn btn-primary add-to-cart" %>
+            <% end %>
+          <% else %>
+            <div class="cart mb-0 d-flex justify-content-end align-items-center">
+              <%= link_to "В корзину", cart_path, class: "btn btn-primary add-to-cart" %>
             </div>
-            <%= f.submit "В корзину", class: "btn btn-primary add-to-cart" %>
           <% end %>
 
           <div class="line"></div>
@@ -68,3 +74,4 @@
     </div>
   </div>
 </section>
+<!-- Contacts -->
