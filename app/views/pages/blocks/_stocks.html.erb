@@ -3,26 +3,38 @@
   <div class="stocks-before"></div>
 
   <div class="container">
-    <h1 class="title">Акции, подарки, бонусы</h1>
+    <h1 class="title"><%= @settings.block6_title %></h1>
 
     <div class="row align-items-sm-end list-items">
-      <div class="offset-md-4 col-md-4 wrapper-block">
-        <div class="info-block gradient-red">Визуал + условия (Рекламный макет)</div>
-        <div class="info-block gradient-blue">Визуал + условия (Рекламный макет)</div>
-      </div>
-      <div class="col-md-4 wrapper-block">
-        <div class="info-block gradient-blue">Визуал + условия (Рекламный макет)</div>
-        <div class="info-block gradient-red">Визуал + условия (Рекламный макет)</div>
-      </div>
+      <%
+        groups = (@bonuses.size % 2).zero? ? @bonuses.size / 2 : @bonuses.size / 2 + 1
+        index = 1
+      %>
+      <% @bonuses.in_groups_of(groups, false).each.with_index(1) do |arr, index| %>
+        <div class="<%= "offset-md-4" if (index % 2).nonzero? %> col-md-4 wrapper-block">
+          <% arr.each.with_index(1) do |bonus, ind| %>
+            <% gradient = (index % 2 == ind % 2) ? "gradient-red" : "gradient-blue" %>
+            <% if bonus.show_text %>
+              <div class="info-block <%= gradient %>">
+                <div class="text"><%= bonus.text %></div>
+              </div>
+            <% else %>
+              <div class="info-block <%= gradient %>"><%= image_tag(bonus.banner) if bonus.banner.attached? %></div>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
 
-    <div class="row align-items-start">
-      <div class="col">
-        <div class="figure-parallelogram and-plus">
-          <a href="#support">и плюс ко всему...</a>
+    <% if @settings.block6_button_text.present? && @settings.block6_button_link.present? %>
+      <div class="row align-items-start">
+        <div class="col">
+          <div class="figure-parallelogram and-plus">
+            <%= link_to @settings.block6_button_text, @settings.block6_button_link %>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </section>
 <!-- Stocks -->
