@@ -3,66 +3,18 @@
   <div class="streak"></div>
 
   <div class="container">
-    <h1 class="title">О нас - В цифрах</h1>
+    <h1 class="title"><%= @settings.block2_title %></h1>
 
     <div class="row align-items-start list-items">
-      <div class="col-sm-6 col-md-3 wrapper-item">
-        <div class="item">
-          <div class="item-icon"><span>15+</span></div>
-          <div class="item-sep"></div>
-          <div class="item-info">квалифицированных профессионалов</div>
+      <% @activities.each do |activity| %>
+        <div class="col-sm-6 col-md-3 wrapper-item">
+          <div class="item">
+            <div class="item-icon"><%= image_tag(activity.icon) if activity.icon.attached? %></div>
+            <div class="item-sep"></div>
+            <div class="item-info"><%= activity.info %></div>
+          </div>
         </div>
-      </div>
-      <div class="col-sm-6 col-md-3 wrapper-item">
-        <div class="item">
-          <div class="item-icon"><%= image_tag "about-icon.png" %></div>
-          <div class="item-sep"></div>
-          <div class="item-info">Собственное конструкторско -технологическое бюро</div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3 wrapper-item">
-        <div class="item">
-          <div class="item-icon"><span>15+</span></div>
-          <div class="item-sep"></div>
-          <div class="item-info">квалифицированных профессионалов</div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3 wrapper-item">
-        <div class="item">
-          <div class="item-icon"><%= image_tag "about-icon.png" %></div>
-          <div class="item-sep"></div>
-          <div class="item-info">Собственное конструкторско -технологическое бюро</div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-md-3 wrapper-item">
-        <div class="item">
-          <div class="item-icon"><span>15+</span></div>
-          <div class="item-sep"></div>
-          <div class="item-info">квалифицированных профессионалов</div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3 wrapper-item">
-        <div class="item">
-          <div class="item-icon"><%= image_tag "about-icon.png" %></div>
-          <div class="item-sep"></div>
-          <div class="item-info">Собственное конструкторско -технологическое бюро</div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3 wrapper-item">
-        <div class="item">
-          <div class="item-icon"><span>15+</span></div>
-          <div class="item-sep"></div>
-          <div class="item-info">квалифицированных профессионалов</div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-3 wrapper-item">
-        <div class="item">
-          <div class="item-icon"><%= image_tag "about-icon.png" %></div>
-          <div class="item-sep"></div>
-          <div class="item-info">Собственное конструкторско -технологическое бюро</div>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </section>
