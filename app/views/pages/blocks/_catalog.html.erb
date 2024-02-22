@@ -14,7 +14,7 @@
     <div class="row align-items-start list-products">
       <% @products.each do |product| %>
         <div class="col-sm-12 col-md-3 wrapper-block">
-          <%= link_to product_path(product), class: "product-block" do %>
+          <%= link_to "/products/#{product.id}", class: "product-block" do %>
             <div class="product-image">
               <%= image_tag(product.image) if product.image.attached? %>
             </div>
@@ -28,7 +28,7 @@
     <div class="row align-items-start list-services">
       <% @services.each do |service| %>
         <div class="col-sm-12 col-md-3 wrapper-block">
-          <%= link_to product_path(service), class: "service-block" do %>
+          <%= link_to "/products/#{service.id}", class: "service-block" do %>
             <div class="service-image">
               <%= image_tag(service.image) if service.image.attached? %>
             </div>
