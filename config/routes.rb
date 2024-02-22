@@ -22,5 +22,6 @@ Rails.application.routes.draw do
     end
 
     resources :products, except: :show
+    resources :settings, only: [:show, :edit, :update]
   end
 end

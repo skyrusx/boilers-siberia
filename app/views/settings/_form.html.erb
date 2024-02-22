@@ -1,0 +1,160 @@
+<%= form_with model: @setting do |form| %>
+  <fieldset class="border rounded-3 p-3">
+    <legend class="float-none w-auto px-3">Основные</legend>
+    <div class="mb-3">
+      <%= form.label :main_title, class: "form-label" %>
+      <%= form.text_field :main_title, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :main_subtitle, class: "form-label" %>
+      <%= form.text_field :main_subtitle, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :main_email, class: "form-label" %>
+      <%= form.text_field :main_email, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :main_phone, class: "form-label" %>
+      <%= form.text_field :main_phone, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :main_address, class: "form-label" %>
+      <%= form.text_field :main_address, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :main_button_text, class: "form-label" %>
+      <%= form.text_field :main_button_text, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :main_button_link, class: "form-label" %>
+      <%= form.text_field :main_button_link, class: "form-control" %>
+    </div>
+  </fieldset>
+
+  <fieldset class="border rounded-3 p-3">
+    <legend class="float-none w-auto px-3">О нас</legend>
+    <div class="mb-3">
+      <%= form.label :block2_title, class: "form-label" %>
+      <%= form.text_field :block2_title, class: "form-control" %>
+    </div>
+    <div class="mb-3 form-check">
+      <%= form.check_box :block2_show, class: "form-check-input" %>
+      <%= form.label :block2_show, class: "form-label" %>
+    </div>
+  </fieldset>
+
+  <fieldset class="border rounded-3 p-3">
+    <legend class="float-none w-auto px-3">Каталог</legend>
+    <div class="mb-3">
+      <%= form.label :block3_title, class: "form-label" %>
+      <%= form.text_field :block3_title, class: "form-control" %>
+    </div>
+    <div class="mb-3 form-check">
+      <%= form.check_box :block3_show, class: "form-check-input" %>
+      <%= form.label :block3_show, class: "form-label" %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :block3_button_text, class: "form-label" %>
+      <%= form.text_field :block3_button_text, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :block3_button_link, class: "form-label" %>
+      <%= form.text_field :block3_button_link, class: "form-control" %>
+    </div>
+  </fieldset>
+
+  <fieldset class="border rounded-3 p-3">
+    <legend class="float-none w-auto px-3">Отзывы</legend>
+    <div class="mb-3">
+      <%= form.label :block4_title, class: "form-label" %>
+      <%= form.text_field :block4_title, class: "form-control" %>
+    </div>
+    <div class="mb-3 form-check">
+      <%= form.check_box :block4_show, class: "form-check-input" %>
+      <%= form.label :block4_show, class: "form-label" %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :block4_button_text, class: "form-label" %>
+      <%= form.text_field :block4_button_text, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :block4_button_link, class: "form-label" %>
+      <%= form.text_field :block4_button_link, class: "form-control" %>
+    </div>
+  </fieldset>
+
+  <fieldset class="border rounded-3 p-3">
+    <legend class="float-none w-auto px-3">Рекомендации</legend>
+    <div class="mb-3">
+      <%= form.label :block5_title, class: "form-label" %>
+      <%= form.text_field :block5_title, class: "form-control" %>
+    </div>
+    <div class="mb-3 form-check">
+      <%= form.check_box :block5_show, class: "form-check-input" %>
+      <%= form.label :block5_show, class: "form-label" %>
+    </div>
+  </fieldset>
+
+  <fieldset class="border rounded-3 p-3">
+    <legend class="float-none w-auto px-3">Бонусы</legend>
+    <div class="mb-3">
+      <%= form.label :block6_title, class: "form-label" %>
+      <%= form.text_field :block6_title, class: "form-control" %>
+    </div>
+    <div class="mb-3 form-check">
+      <%= form.check_box :block6_show, class: "form-check-input" %>
+      <%= form.label :block6_show, class: "form-label" %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :block6_button_text, class: "form-label" %>
+      <%= form.text_field :block6_button_text, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :block6_button_link, class: "form-label" %>
+      <%= form.text_field :block6_button_link, class: "form-control" %>
+    </div>
+  </fieldset>
+
+  <fieldset class="border rounded-3 p-3">
+    <legend class="float-none w-auto px-3">Поддержка</legend>
+    <div class="mb-3">
+      <%= form.label :block7_title, class: "form-label" %>
+      <%= form.text_field :block7_title, class: "form-control" %>
+    </div>
+    <div class="mb-3 form-check">
+      <%= form.check_box :block7_show, class: "form-check-input" %>
+      <%= form.label :block7_show, class: "form-label" %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :block7_button_text, class: "form-label" %>
+      <%= form.text_field :block7_button_text, class: "form-control" %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :block7_button_link, class: "form-label" %>
+      <%= form.text_field :block7_button_link, class: "form-control" %>
+    </div>
+  </fieldset>
+
+  <fieldset class="border rounded-3 p-3">
+    <legend class="float-none w-auto px-3">Контакты</legend>
+    <div class="mb-3">
+      <%= form.label :contacts_title, class: "form-label" %>
+      <%= form.text_field :contacts_title, class: "form-control" %>
+    </div>
+    <div class="mb-3 form-check">
+      <%= form.check_box :contacts_show, class: "form-check-input" %>
+      <%= form.label :contacts_show, class: "form-label" %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :contacts_map, class: "form-label" %>
+      <%= form.text_area :contacts_map, rows: 3, class: "form-control" %>
+    </div>
+    <div class="mb-3 form-check">
+      <%= form.check_box :contacts_show_map, class: "form-check-input" %>
+      <%= form.label :contacts_show_map, class: "form-label" %>
+    </div>
+  </fieldset>
+  <div>
+    <%= form.submit "Сохранить", class: "btn btn-primary" %>
+  </div>
+<% end %>

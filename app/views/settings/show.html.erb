@@ -1,0 +1,78 @@
+<div>
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="mb-2 mb-lg-0">
+      <h3 class="mb-0 text-white">Настройки</h3>
+    </div>
+    <div>
+      <%= link_to "Редактировать", edit_setting_path(@setting), class: "btn btn-light" %>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">Просмотр</div>
+  <div class="card-body">
+    <fieldset class="border rounded-3 p-3">
+      <legend class="float-none w-auto px-3">Основные</legend>
+      <p><b>Заголовок:</b> <%= @setting.main_title %></p>
+      <p><b>Подзаголовок:</b> <%= @setting.main_subtitle %></p>
+      <p><b>E-mail:</b> <%= @setting.main_email %></p>
+      <p><b>Телефон:</b> <%= @setting.main_phone %></p>
+      <p><b>Адрес:</b> <%= @setting.main_address %></p>
+      <p><b>Текст кнопки:</b> <%= @setting.main_button_text %></p>
+      <p><b>Ссылка кнопки:</b> <%= @setting.main_button_link %></p>
+    </fieldset>
+
+    <fieldset class="border rounded-3 p-3">
+      <legend class="float-none w-auto px-3">О нас</legend>
+      <p><b>Заголовок:</b> <%= @setting.block2_title %></p>
+      <p><b>Показывать блок:</b> <%= @setting.block2_show ? "Да" : "Нет" %></p>
+    </fieldset>
+
+    <fieldset class="border rounded-3 p-3">
+      <legend class="float-none w-auto px-3">Каталог</legend>
+      <p><b>Заголовок:</b> <%= @setting.block3_title %></p>
+      <p><b>Показывать блок:</b> <%= @setting.block3_show ? "Да" : "Нет" %></p>
+      <p><b>Текст кнопки:</b> <%= @setting.block3_button_text %></p>
+      <p><b>Ссылка кнопки:</b> <%= @setting.block3_button_link %></p>
+    </fieldset>
+
+    <fieldset class="border rounded-3 p-3">
+      <legend class="float-none w-auto px-3">Отзывы</legend>
+      <p><b>Заголовок:</b> <%= @setting.block4_title %></p>
+      <p><b>Показывать блок:</b> <%= @setting.block4_show ? "Да" : "Нет" %></p>
+      <p><b>Текст кнопки:</b> <%= @setting.block4_button_text %></p>
+      <p><b>Ссылка кнопки:</b> <%= @setting.block4_button_link %></p>
+    </fieldset>
+
+    <fieldset class="border rounded-3 p-3">
+      <legend class="float-none w-auto px-3">Рекомендации</legend>
+      <p><b>Заголовок:</b> <%= @setting.block5_title %></p>
+      <p><b>Показывать блок:</b> <%= @setting.block5_show ? "Да" : "Нет" %></p>
+    </fieldset>
+
+    <fieldset class="border rounded-3 p-3">
+      <legend class="float-none w-auto px-3">Бонусы</legend>
+      <p><b>Заголовок:</b> <%= @setting.block6_title %></p>
+      <p><b>Показывать блок:</b> <%= @setting.block6_show ? "Да" : "Нет" %></p>
+      <p><b>Текст кнопки:</b> <%= @setting.block6_button_text %></p>
+      <p><b>Ссылка кнопки:</b> <%= @setting.block6_button_link %></p>
+    </fieldset>
+
+    <fieldset class="border rounded-3 p-3">
+      <legend class="float-none w-auto px-3">Поддержка</legend>
+      <p><b>Заголовок:</b> <%= @setting.block7_title %></p>
+      <p><b>Показывать блок:</b> <%= @setting.block7_show ? "Да" : "Нет" %></p>
+      <p><b>Текст кнопки:</b> <%= @setting.block7_button_text %></p>
+      <p><b>Ссылка кнопки:</b> <%= @setting.block7_button_link %></p>
+    </fieldset>
+
+    <fieldset class="border rounded-3 p-3">
+      <legend class="float-none w-auto px-3">Контакты</legend>
+      <p><b>Заголовок:</b> <%= @setting.contacts_title %></p>
+      <p><b>Показывать блок:</b> <%= @setting.contacts_show ? "Да" : "Нет" %></p>
+      <p><b>Карта:</b> <%= @setting.contacts_map.html_safe %></p>
+      <p><b>Показывать карту:</b> <%= @setting.contacts_show_map ? "Да" : "Нет" %></p>
+    </fieldset>
+  </div>
+</div>

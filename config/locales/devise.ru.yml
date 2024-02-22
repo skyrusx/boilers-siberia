@@ -72,6 +72,45 @@ ru:
         sku: SKU
         product_type: Тип
         image: Картинка
+      setting:
+        main_title: Заголовок
+        main_subtitle: Подзаголовок
+        main_email: E-mail
+        main_phone: Телефон
+        main_address: Адрес
+        main_button_text: Текст кнопки
+        main_button_link: Ссылка кнопки
+
+        block2_title: Заголовок
+        block2_show: Показывать блок
+
+        block3_title: Заголовок
+        block3_show: Показывать блок
+        block3_button_text: Текст кнопки
+        block3_button_link: Ссылка кнопки
+
+        block4_title: Заголовок
+        block4_show: Показывать блок
+        block4_button_text: Текст кнопки
+        block4_button_link: Ссылка кнопки
+
+        block5_title: Заголовок
+        block5_show: Показывать блок
+
+        block6_title: Заголовок
+        block6_show: Показывать блок
+        block6_button_text: Текст кнопки
+        block6_button_link: Ссылка кнопки
+
+        block7_title: Заголовок
+        block7_show: Показывать блок
+        block7_button_text: Текст кнопки
+        block7_button_link: Ссылка кнопки
+
+        contacts_title: Заголовок
+        contacts_show: Показывать блок
+        contacts_map: Карта
+        contacts_show_map: Показывать карту
     models:
       user:
         few: Пользователя
