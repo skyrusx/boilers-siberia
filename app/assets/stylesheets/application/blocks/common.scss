@@ -49,13 +49,20 @@ h1 {
   background: linear-gradient(90deg, rgba(97, 196, 235, 1) 0%, rgba(73, 65, 145, 1) 100%);
 }
 
-#main, #contacts, #stocks, #reviews, #about {
+#main, #contacts, #stocks, #reviews, #about, #product, #cart {
   background: url(background.jpg) 100%;
 }
 
-#main, #about, #reviews, #recommend, #stocks, #support {
+#main, #about, #reviews, #recommend, #stocks, #support, #product, #cart {
   position: relative;
   height: 100vh;
+}
+
+#main {
+  &.main-page {
+    max-height: 100vh;
+    height: 100%;
+  }
 }
 
 #about .list-items,
@@ -65,7 +72,7 @@ h1 {
 }
 
 @media (max-width: 767px) {
-  #main, #about, #reviews, #recommend, #stocks, #support {
+  #main, #about, #reviews, #recommend, #stocks, #support, #product, #cart {
     height: 100%;
   }
 
@@ -91,7 +98,7 @@ h1 {
     margin-right: auto;
   }
 
-  #catalog, #recommend, #support {
+  #catalog, #recommend, #support, #product, #cart {
     .wrapper-left {
       clip-path: polygon(0 0, 100% 0, 100% 98%, 0% 100%) !important;
       width: calc(100% - 20px) !important;

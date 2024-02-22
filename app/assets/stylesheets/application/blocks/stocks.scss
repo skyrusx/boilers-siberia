@@ -19,11 +19,12 @@
     }
 
     .list-items {
-      margin-bottom: 90px;
+      margin-bottom: 40px;
 
       .info-block {
-        padding: 50px;
+        height: 200px;
         text-align: center;
+        vertical-align: middle;
         text-transform: uppercase;
         color: white;
         margin-bottom: 24px;
@@ -37,6 +38,15 @@
         &.gradient-blue {
           background: rgb(97, 196, 235);
           background: linear-gradient(90deg, rgba(97, 196, 235, 1) 0%, rgba(73, 65, 145, 1) 100%);
+        }
+
+        .text {
+          padding: 50px;
+        }
+
+        img {
+          width: 100%;
+          max-height: 200px;
         }
       }
     }
