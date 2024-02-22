@@ -6,33 +6,35 @@
   <div class="wrapper-right"></div>
 
   <div class="container">
-    <h1 class="title">Поддержка</h1>
+    <h1 class="title"><%= @settings.block7_title %></h1>
 
     <div class="row align-items-start">
       <div class="col-sm-12 col-md-5">
-        <div class="instructions">
-          <p class="subtitle">Инструкции</p>
-          <a href="#">Автоматический котел ГЕЛИОС</a>
-          <a href="#">Блок управления котлом с модулем GSM</a>
-        </div>
+        <% @groups_left.each.with_index(1) do |group, index| %>
+          <div class="<%= index == 1 ? 'instructions' : 'info' %>">
+            <p class="subtitle"><%= group.title %></p>
+            <% group.supports.each do |support| %>
+              <%= link_to support.title, support.link %>
+            <% end %>
+          </div>
 
-        <div class="info">
-          <p class="subtitle">Полезная информация</p>
-          <a href="#">Расчет расхода топлива</a>
-          <a href="#">Прошивки</a>
-        </div>
-
-        <div class="figure-parallelogram your-question">
-          <a href="#contacts">ваш вопрос?</a>
-        </div>
+          <% if @groups_left.size == index && @settings.block7_button_text.present? && @settings.block7_button_link.present? %>
+            <div class="figure-parallelogram your-question">
+              <%= link_to @settings.block7_button_text, @settings.block7_button_link %>
+            </div>
+          <% end %>
+        <% end %>
       </div>
 
       <div class="col-sm-12 col-md-5">
-        <div class="files">
-          <p class="subtitle">Файлы для скачивания (прошивки)</p>
-          <a href="#">Инструкция по обновлению прошивок</a>
-          <a href="#">Прошивки</a>
-        </div>
+        <% @groups_right.each do |group| %>
+          <div class="files">
+            <p class="subtitle"><%= group.title %></p>
+            <% group.supports.each do |support| %>
+              <%= link_to support.title, support.link %>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
