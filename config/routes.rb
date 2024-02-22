@@ -22,6 +22,11 @@ Rails.application.routes.draw do
     end
 
     resources :products, except: :show
+    resources :orders, except: :show
     resources :settings, only: [:show, :edit, :update]
   end
+
+  get 'cart', to: 'cart#show'
+  resources :order_items
+  resources :products, only: :show
 end
