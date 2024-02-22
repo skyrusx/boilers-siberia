@@ -3,7 +3,7 @@
   <div class="contacts-before"></div>
 
   <div class="container">
-    <h1 class="title">Контакты</h1>
+    <h1 class="title"><%= @settings.contacts_title %></h1>
 
     <div class="row align-items-start">
       <div class="col">
@@ -58,15 +58,17 @@
     </div>
 
     <div class="row align-items-start">
-      <div class="col">
-        <div class="info-map">
-          <p class="subtitle">Яндекс карта проезда</p>
+      <% if @settings.contacts_show_map %>
+        <div class="col">
+          <div class="info-map">
+            <p class="subtitle">Яндекс карта проезда</p>
 
-          <div class="map-wrapper">
-            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af26020c5e0ae4b1b5e87d35c2afaa14d217bee2bf4af875c371a9e4a25053d32&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
+            <div class="map-wrapper">
+              <%= @settings.contacts_map.html_safe %>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
 
       <div class="footer">
         <p>© <%= Date.today.year %></p>
