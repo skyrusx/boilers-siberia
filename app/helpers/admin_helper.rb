@@ -16,4 +16,12 @@ module AdminHelper
       classes += 'alert-info'
     end
   end
+
+  def current_order
+    Order.find_by_id(session[:order_id]).nil? ? Order.new : Order.find_by_id(session[:order_id])
+  end
+
+  def find_settings
+    Setting.all.first
+  end
 end
