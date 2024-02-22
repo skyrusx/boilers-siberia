@@ -1,8 +1,8 @@
 <%= render 'pages/blocks/main' %>
-<%= render 'pages/blocks/about' %>
-<%= render 'pages/blocks/catalog' %>
-<%= render 'pages/blocks/reviews' %>
-<%= render 'pages/blocks/recommend' %>
-<%= render 'pages/blocks/stocks' %>
-<%= render 'pages/blocks/support' %>
-<%= render 'pages/blocks/contacts' %>
+<%= render 'pages/blocks/about' if @settings.block2_show && @activities.present? %>
+<%= render 'pages/blocks/catalog' if @settings.block3_show && (@products.present? || @services.present?) %>
+<%= render 'pages/blocks/reviews' if @settings.block4_show && @reviews.present? %>
+<%= render 'pages/blocks/recommend' if @settings.block5_show && @advantages.present? %>
+<%= render 'pages/blocks/stocks' if @settings.block6_show && @bonuses.present? %>
+<%= render 'pages/blocks/support' if @settings.block7_show && @groups.present? %>
+<%= render 'pages/blocks/contacts' if @settings.contacts_show && @contacts.present? %>
