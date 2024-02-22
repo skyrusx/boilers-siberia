@@ -1,7 +1,7 @@
 <%= form_with model: @product do |form| %>
   <div class="mb-3">
     <%= form.label :product_type, class: "form-label" %>
-    <%= form.select(:product_type, Product::TYPES, {}, { class: "form-control", selected: @product.product_type || Product::TYPES.first }) %>
+    <%= form.select(:product_type, Product::TYPES.values, { selected: @product.product_type || Product::TYPES[params[:type].to_sym] }, { class: "form-control" }) %>
   </div>
   <div class="col-md-3 mb-3 img-wrapper">
     <%= label_tag "Картинка", nil, class: "form-label" %>

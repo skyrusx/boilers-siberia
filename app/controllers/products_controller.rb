@@ -3,7 +3,7 @@ class ProductsController < AdminController
   layout "application", only: :show
 
   def index
-    @products = Product.all
+    @products = Product.where(product_type: Product::TYPES[params[:type].to_sym])
   end
 
   def show
@@ -23,7 +23,7 @@ class ProductsController < AdminController
 
     if @product.save
       flash[:success] = "Товар '#{@product.title}' успешно создан"
-      redirect_to products_path
+      redirect_to products_path(type: params[:type])
     else
       flash.now[:error] = "Ошибка создания товара '#{@product.title}'"
       render :new, status: :unprocessable_entity
@@ -39,7 +39,7 @@ class ProductsController < AdminController
 
     if @product.update(product_params)
       flash[:success] = "Товар '#{@product.title}' успешно изменен"
-      redirect_to products_path
+      redirect_to products_path(type: params[:type])
     else
       flash.now[:error] = "Ошибка изменения товара '#{@product.title}'"
       render :edit, status: :unprocessable_entity
@@ -51,7 +51,7 @@ class ProductsController < AdminController
     @product.destroy
 
     flash.now[:success] = "Товар успешно удален"
-    redirect_to products_path, status: :see_other
+    redirect_to products_path(type: params[:type]), status: :see_other
   end
 
   private

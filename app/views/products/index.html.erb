@@ -1,10 +1,10 @@
 <div>
   <div class="d-flex justify-content-between align-items-center">
     <div class="mb-2 mb-lg-0">
-      <h3 class="mb-0 text-white">Товары</h3>
+      <h3 class="mb-0 text-white"><%= Product::TYPES[params[:type].to_sym] %></h3>
     </div>
     <div>
-      <%= link_to "Создать", new_product_path, class: "btn btn-light" %>
+      <%= link_to "Создать", new_product_path(type: params[:type]), class: "btn btn-light" %>
     </div>
   </div>
 </div>
@@ -12,7 +12,6 @@
 <div class="card">
   <div class="card-header">Список</div>
   <div class="card-body">
-    <p><%= params %></p>
     <% if @products.present? %>
       <table class="table table-striped align-middle text-center">
         <thead>
@@ -39,8 +38,8 @@
               <td><%= product.description %></td>
               <td><%= product.sku %></td>
               <td><%= product.product_type %></td>
-              <td><%= link_to "Редактировать", edit_product_path(product), class: "btn btn-primary" %></td>
-              <td><%= link_to "Удалить", product_path(product), class: "btn btn-danger", method: :delete, data: { confirm: "Вы уверены?" } %></td>
+              <td><%= link_to "Редактировать", edit_product_path(id: product, type: params[:type]), class: "btn btn-primary" %></td>
+              <td><%= link_to "Удалить", product_path(id: product, type: params[:type]), class: "btn btn-danger", method: :delete, data: { confirm: "Вы уверены?" } %></td>
             </tr>
           <% end %>
         </tbody>
