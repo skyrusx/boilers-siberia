@@ -33,18 +33,21 @@
 
       <div class="col">
         <div class="info-feedback">
-          <form>
+          <%= form_with model: @message do |form| %>
+            <%= form.hidden_field :type_feedback, value: :appeal %>
             <div class="mb-3">
-              <input type="text" class="form-control" id="name" placeholder="Ф.И.О">
+              <%= form.text_field :name, class: "form-control", placeholder: "Ф.И.О" %>
             </div>
             <div class="mb-3">
-              <input type="text" class="form-control" id="phone" placeholder="Телефон">
+              <%= form.text_field :phone, class: "form-control", placeholder: "Телефон" %>
             </div>
             <div class="mb-3">
-              <textarea class="form-control" id="question" rows="3" placeholder="Ваш вопрос"></textarea>
+              <%= form.text_area :question, rows: 3, class: "form-control", placeholder: "Ваш вопрос" %>
             </div>
-            <button type="submit" class="btn">Отправить</button>
-          </form>
+            <div>
+              <%= form.submit "Отправить", class: "btn" %>
+            </div>
+          <% end %>
         </div>
 
         <% if @social_links.present? %>
