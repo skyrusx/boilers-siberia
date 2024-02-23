@@ -17,5 +17,7 @@ class PagesController < ApplicationController
 
     @contacts = Contact.order("region DESC")
     @social_links = SocialLink.all
+
+    @message = Message.new
   end
 end
