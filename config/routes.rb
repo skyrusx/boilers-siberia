@@ -29,4 +29,5 @@ Rails.application.routes.draw do
   get 'cart', to: 'cart#show'
   resources :order_items
   resources :products, only: :show
+  resources :messages
 end
