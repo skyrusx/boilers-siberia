@@ -96,5 +96,13 @@ Rails.application.configure do
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 
   config.action_mailer.default_url_options = { host: "boilers-siberia.ru" }
-
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "mail.netangels.ru",
+    :port                 => 25,
+    :domain               => "boilers-siberia.ru",
+    :user_name            => ENV["EMAIL_ADDRESS"],
+    :password             => ENV["EMAIL_PASSWORD"],
+    :enable_starttls_auto => true
+  }
 end
