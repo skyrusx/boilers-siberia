@@ -27,8 +27,8 @@ class OrderItemsController < ApplicationController
         format.html { redirect_to cart_path, success: "Товар добавлен в корзину" }
         format.js {}
       else
-        format.html { render :action => 'edit' }
-        format.js { render :action => 'edit' }
+        format.html { redirect_to cart_path, warning: "Товар не добавлен в корзину" }
+        format.js {}
       end
     end
   end
