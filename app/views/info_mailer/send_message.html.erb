@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body>
+    <p>Пользователь: <%= @message.name %></p>
+    <p>Телефон: <%= @message.phone %></p>
+    <p>Сообщение: <%= @message.question %></p>
+    <hr>
+    <%
+      current_order = Order.find_by_id(@message.order_id)
+      @order_items = current_order.order_items if current_order.present?
+    %>
+    <% if @order_items.present? %>
+      <table role="presentation" border="1" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <th scope="col" width="60%">Товары</th>
+            <th scope="col" width="15%">Количество</th>
+            <th scope="col" width="15%">Цена</th>
+            <th scope="col" width="15%">Всего</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @order_items.each do |item| %>
+          <tr>
+            <td><%= item.product.title %></td>
+            <td><%= item.quantity %></td>
+            <td><%= item.product.price %> ₽</td>
+            <td><%= item.total %> ₽</td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+
+      <p>Всего: <%= current_order.subtotal %> ₽</p>
+    <% end %>
+  </body>
+</html>
