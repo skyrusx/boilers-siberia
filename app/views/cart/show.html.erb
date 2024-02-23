@@ -75,18 +75,24 @@
 
             <div class="line"></div>
 
-            <form>
-              <div class="mb-3">
-                <input type="text" class="form-control" id="name" placeholder="Ф.И.О">
-              </div>
-              <div class="mb-3">
-                <input type="text" class="form-control" id="phone" placeholder="Телефон">
-              </div>
-              <div class="mb-3">
-                <textarea class="form-control" id="question" rows="3" placeholder="Ваш вопрос"></textarea>
-              </div>
-              <button type="submit" class="btn">Отправить</button>
-            </form>
+            <div class="info-feedback d-flex justify-content-end">
+              <%= form_with model: @message do |form| %>
+                <%= form.hidden_field :type_feedback, value: :order %>
+                <%= form.hidden_field :order_id, value: @order_id %>
+                <div class="mb-3">
+                  <%= form.text_field :name, class: "form-control", placeholder: "Ф.И.О" %>
+                </div>
+                <div class="mb-3">
+                  <%= form.text_field :phone, class: "form-control", placeholder: "Телефон" %>
+                </div>
+                <div class="mb-3">
+                  <%= form.text_area :question, rows: 3, class: "form-control", placeholder: "Сообщение" %>
+                </div>
+                <div>
+                  <%= form.submit "Отправить", class: "btn btn-dark" %>
+                </div>
+              <% end %>
+            </div>
           <% else %>
             <div class="alert alert-primary text-center" role="alert">Корзина пустая</div>
           <% end %>
