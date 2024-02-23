@@ -2,6 +2,8 @@
   background: url(catalog-bg.jpg) no-repeat;
   background-size: cover;
   position: relative;
+  height: 100%;
+  min-height: 100vh;
 
   .wrapper-left {
     clip-path: polygon(0 0, 100% 0, 63% 100%, 0 100%);
@@ -126,6 +128,36 @@
             border: unset;
             margin-left: 10px;
             color: rgb(171, 171, 171);
+          }
+        }
+      }
+
+      .info-feedback {
+        form {
+          border: 2px #495057 solid;
+          padding: 25px;
+          text-align: right;
+          font-family: 'RobotoSlab Regular';
+          background-color: #343a40;
+          width: 50%;
+
+          input[type="text"], textarea {
+            background: transparent;
+          }
+
+          input, textarea, button {
+            border-radius: unset;
+            border: 2px #495057 solid;
+            color: white;
+
+            &::placeholder {
+              color: white;
+              opacity: 1; /* Firefox */
+            }
+
+            &::-ms-input-placeholder { /* Edge 12 -18 */
+              color: white;
+            }
           }
         }
       }
