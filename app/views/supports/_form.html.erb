@@ -13,6 +13,9 @@
   </div>
   <div class="mb-3">
     <%= form.label :file, class: "form-label" %>
+    <% if @support.file.attached? %>
+      <p><%= @support.file.filename.to_s %></p>
+    <% end %>
     <%= form.file_field :file, class: "form-control" %>
   </div>
   <div>

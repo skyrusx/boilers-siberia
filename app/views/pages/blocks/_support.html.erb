@@ -14,7 +14,8 @@
           <div class="<%= index == 1 ? 'instructions' : 'info' %>">
             <p class="subtitle"><%= group.title %></p>
             <% group.supports.each do |support| %>
-              <%= link_to support.title, support.link %>
+              <% href = support.link.present? ? support.link : support.file %>
+              <%= link_to support.title, href, target: "_blank" %>
             <% end %>
           </div>
 
