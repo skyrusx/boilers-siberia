@@ -23,9 +23,9 @@
               <table class="table-dark table border align-middle">
                 <thead>
                   <tr>
-                    <th scope="col" colspan="2" width="65%">Товары</th>
+                    <th scope="col" colspan="2" width="60%">Товары</th>
                     <th scope="col" width="20%">Количество</th>
-                    <th scope="col" width="10%">Цена</th>
+                    <th scope="col" width="15%">Цена</th>
                     <th scope="col" width="5%"></th>
                   </tr>
                 </thead>
@@ -36,8 +36,8 @@
                       <td width="56%">
                         <div class="product-title"><%= item.product.title %></div>
                         <div class="product-price">
-                          <del><%= item.product.old_price %> ₽</del>
-                          <ins><%= item.product.price %> ₽</ins>
+                          <del><%= number_to_currency item.product.old_price %></del>
+                          <ins><%= number_to_currency item.product.price %></ins>
                         </div>
                       </td>
                       <td>
@@ -48,30 +48,31 @@
                             <%= f.number_field :quantity, value: item.quantity, min: 1, class: "qty" %>
                             <%= button_tag "+", type: "button", class: "plus" %>
 
-                        <%= f.button nil, class: "update-cart" do %>
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
-                            <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/>
-                            <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"/>
+                            <%= f.button nil, class: "update-cart" do %>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                                <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9"/>
+                                <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z"/>
+                              </svg>
+                            <% end %>
+                          </div>
+                        <% end %>
+                      </td>
+                      <td><%= number_to_currency item.total %></td>
+                      <td>
+                        <%= link_to item, method: :delete, class: "delete-item", remote: true do %>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
                           </svg>
                         <% end %>
-                      </div>
-                    <% end %>
-                  </td>
-                  <td><%= item.total %> ₽</td>
-                  <td>
-                    <%= link_to item, method: :delete, class: "delete-item", remote: true do %>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
-                      </svg>
-                    <% end %>
-                  </td>
-                </tr>
-              <% end %>
-              </tbody>
-            </table>
+                      </td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
 
             <div class="total-price">
-              <span>Общая цена: <%= current_order.subtotal %> ₽</span>
+              <span>Общая цена: <%= number_to_currency current_order.subtotal %></span>
             </div>
 
             <div class="line"></div>

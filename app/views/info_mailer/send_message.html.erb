@@ -28,14 +28,14 @@
           <tr>
             <td><%= item.product.title %></td>
             <td><%= item.quantity %></td>
-            <td><%= item.product.price %> ₽</td>
-            <td><%= item.total %> ₽</td>
+            <td><%= number_to_currency item.product.price %></td>
+            <td><%= number_to_currency item.total %></td>
           </tr>
         <% end %>
         </tbody>
       </table>
 
-      <p>Всего: <%= current_order.subtotal %> ₽</p>
+      <p>Всего: <%= number_to_currency current_order.subtotal %></p>
     <% end %>
   </body>
 </html>

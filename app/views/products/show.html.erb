@@ -24,8 +24,8 @@
       <div class="col-md-7">
         <div class="product-info">
           <div class="product-price">
-            <del><%= @product.old_price %> ₽</del>
-            <ins><%= @product.price %> ₽</ins>
+            <del><%= number_to_currency @product.old_price %></del>
+            <ins><%= number_to_currency @product.price %></ins>
           </div>
 
           <div class="line"></div>
