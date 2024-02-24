@@ -19,33 +19,34 @@
       <div class="col">
         <div class="cart-info">
           <% if @order_items.present? %>
-            <table class="table-dark table border align-middle">
-              <thead>
-              <tr>
-                <th scope="col" colspan="2" width="65%">Товары</th>
-                <th scope="col" width="20%">Количество</th>
-                <th scope="col" width="10%">Цена</th>
-                <th scope="col" width="5%"></th>
-              </tr>
-              </thead>
-              <tbody>
-              <% @order_items.each do |item| %>
-                <tr>
-                  <td width="9%"><%= image_tag item.product.image, class: "product-image__preview" %></td>
-                  <td width="56%">
-                    <div class="product-title"><%= item.product.title %></div>
-                    <div class="product-price">
-                      <del><%= item.product.old_price %> ₽</del>
-                      <ins><%= item.product.price %> ₽</ins>
-                    </div>
-                  </td>
-                  <td>
-                    <%= form_with model: item, class: "cart mb-0 d-flex justify-content-between align-items-center" do |f| %>
-                      <div class="quantity">
-                        <%= f.hidden_field :product_id, value: item.product.id %>
-                        <%= button_tag "-", type: "button", class: "minus" %>
-                        <%= f.number_field :quantity, value: item.quantity, min: 1, class: "qty" %>
-                        <%= button_tag "+", type: "button", class: "plus" %>
+            <div class="table-wrapper">
+              <table class="table-dark table border align-middle">
+                <thead>
+                  <tr>
+                    <th scope="col" colspan="2" width="65%">Товары</th>
+                    <th scope="col" width="20%">Количество</th>
+                    <th scope="col" width="10%">Цена</th>
+                    <th scope="col" width="5%"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @order_items.each do |item| %>
+                    <tr>
+                      <td width="9%"><%= image_tag item.product.image, class: "product-image__preview" %></td>
+                      <td width="56%">
+                        <div class="product-title"><%= item.product.title %></div>
+                        <div class="product-price">
+                          <del><%= item.product.old_price %> ₽</del>
+                          <ins><%= item.product.price %> ₽</ins>
+                        </div>
+                      </td>
+                      <td>
+                        <%= form_with model: item, class: "cart mb-0 d-flex justify-content-between align-items-center" do |f| %>
+                          <div class="quantity">
+                            <%= f.hidden_field :product_id, value: item.product.id %>
+                            <%= button_tag "-", type: "button", class: "minus" %>
+                            <%= f.number_field :quantity, value: item.quantity, min: 1, class: "qty" %>
+                            <%= button_tag "+", type: "button", class: "plus" %>
 
                         <%= f.button nil, class: "update-cart" do %>
                           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
