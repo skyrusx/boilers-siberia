@@ -33,6 +33,7 @@
 
       <div class="col">
         <div class="info-feedback">
+          <%= render 'pages/shared/flash_messages' %>
           <%= form_with model: @message, url: "/messages", method: :post do |form| %>
             <%= form.hidden_field :type_feedback, value: :appeal %>
             <div class="mb-3">

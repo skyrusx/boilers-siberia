@@ -21,10 +21,10 @@ class MessagesController < AdminController
         InfoMailer.with(message: @message).send_message.deliver_later
         session.delete(:order_id)
 
-        format.html { redirect_to(application_page, success: success_message) }
+        format.html { redirect_to(application_page, flash: { success: success_message }) }
         format.json { render json: @message, status: :created, location: @message }
       else
-        format.html { redirect_to(application_page, warning: warning_message) }
+        format.html { redirect_to(application_page, flash: { warning: warning_message }) }
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end
@@ -37,7 +37,7 @@ class MessagesController < AdminController
   end
 
   def application_page
-    @message.type_feedback == "order" ? cart_path : root_path
+    @message.type_feedback == "order" ? cart_path : root_path(anchor: :contacts)
   end
 
   def success_message
