@@ -19,7 +19,6 @@ class MessagesController < AdminController
     respond_to do |format|
       if @message.save
         InfoMailer.with(message: @message).send_message.deliver_later
-        current_order.update_attribute :status, Order::STATUSES[:sent]
         session.delete(:order_id)
 
         format.html { redirect_to(application_page, success: success_message) }
