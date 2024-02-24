@@ -1,4 +1,13 @@
 class MessagesController < AdminController
+  def index
+    @messages = Message.where(type_feedback: params[:type])
+  end
+
+  def show
+    @message = Message.find(params[:id])
+    @order = Order.find_by_id(@message.order_id)
+  end
+
   def new
     @message = Message.new
   end

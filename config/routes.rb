@@ -24,10 +24,11 @@ Rails.application.routes.draw do
     resources :products, except: :show
     resources :orders, except: :show
     resources :settings, only: [:show, :edit, :update]
+    resources :messages, only: [:index, :show]
   end
 
   get 'cart', to: 'cart#show'
   resources :order_items
   resources :products, only: :show
-  resources :messages
+  resources :messages, only: [:new, :create]
 end

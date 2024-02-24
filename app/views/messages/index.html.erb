@@ -1,0 +1,39 @@
+<div>
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="mb-2 mb-lg-0">
+      <h3 class="mb-0 text-white"><%= Message::TYPES[params[:type].to_sym] %></h3>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">Список</div>
+  <div class="card-body">
+    <% if @messages.present? %>
+      <table class="table table-striped align-middle text-center">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">ФИО</th>
+            <th scope="col">Телефон</th>
+            <th scope="col">Сообщение</th>
+            <th colspan="2" scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @messages.each.with_index(1) do |message, index| %>
+          <tr>
+            <td><%= index %></td>
+            <td><%= message.name %></td>
+            <td><%= message.phone %></td>
+            <td><%= message.question %></td>
+            <td><%= link_to "Просмотр", message_path(id: message, type: params[:type]), class: "btn btn-primary" %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <div class="alert alert-primary text-center" role="alert">Упс! Данные не найдены.</div>
+    <% end %>
+  </div>
+</div>
