@@ -33,7 +33,7 @@
 
       <div class="col">
         <div class="info-feedback">
-          <%= form_with model: @message do |form| %>
+          <%= form_with model: @message, url: "/messages", method: :post do |form| %>
             <%= form.hidden_field :type_feedback, value: :appeal %>
             <div class="mb-3">
               <%= form.text_field :name, class: "form-control", placeholder: "Ф.И.О" %>

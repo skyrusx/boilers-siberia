@@ -78,7 +78,7 @@
             <div class="line"></div>
 
             <div class="info-feedback d-flex justify-content-end">
-              <%= form_with model: @message do |form| %>
+              <%= form_with model: @message, url: "/messages", method: :post do |form| %>
                 <%= form.hidden_field :type_feedback, value: :order %>
                 <%= form.hidden_field :order_id, value: @order_id %>
                 <div class="mb-3">
