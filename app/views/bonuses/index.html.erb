@@ -31,7 +31,7 @@
         <% @bonuses.each.with_index(1) do |bonus, index| %>
           <tr>
             <td><%= index %></td>
-            <td><%= image_tag(bonus.banner) if bonus.banner.attached? %></td>
+            <td><%= image_tag(bonus.banner.variant(:admin)) if bonus.banner.attached? %></td>
             <td><%= bonus.text %></td>
             <td><%= bonus.show_text ? "Да" : "Нет" %></td>
             <td>

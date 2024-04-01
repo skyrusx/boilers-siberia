@@ -19,7 +19,7 @@
                 <div class="text"><%= bonus.text %></div>
               </div>
             <% else %>
-              <div class="info-block <%= gradient %>"><%= image_tag(bonus.banner) if bonus.banner.attached? %></div>
+              <div class="info-block <%= gradient %>"><%= image_tag(bonus.banner.variant(:preview)) if bonus.banner.attached? %></div>
             <% end %>
           <% end %>
         </div>
