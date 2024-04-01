@@ -11,7 +11,7 @@
           <div class="item-review">
             <div class="item-review__header">
               <div class="user-avatar">
-                <%= image_tag(review.avatar) if review.avatar.attached? %>
+                <%= image_tag(review.avatar.variant(:preview)) if review.avatar.attached? %>
               </div>
               <div class="user-name"><%= review.name %></div>
             </div>
