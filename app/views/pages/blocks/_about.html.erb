@@ -9,7 +9,7 @@
       <% @activities.each do |activity| %>
         <div class="col-sm-6 col-md-3 wrapper-item">
           <div class="item">
-            <div class="item-icon"><%= image_tag(activity.icon) if activity.icon.attached? %></div>
+            <div class="item-icon"><%= image_tag(activity.icon.variant(:preview)) if activity.icon.attached? %></div>
             <div class="item-sep"></div>
             <div class="item-info"><%= activity.info %></div>
           </div>

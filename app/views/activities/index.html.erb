@@ -30,7 +30,7 @@
         <% @activities.each.with_index(1) do |activity, index| %>
           <tr>
             <td><%= index %></td>
-            <td><%= image_tag(activity.icon) if activity.icon.attached? %></td>
+            <td><%= image_tag(activity.icon.variant(:admin)) if activity.icon.attached? %></td>
             <td><%= activity.info %></td>
             <td>
               <%= link_to edit_activity_path(activity), class: "btn btn-primary" do %>
