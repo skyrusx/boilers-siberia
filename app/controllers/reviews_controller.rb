@@ -1,6 +1,6 @@
 class ReviewsController < AdminController
   def index
-    @reviews = Review.all
+    @reviews = Review.order("id ASC")
   end
 
   def new

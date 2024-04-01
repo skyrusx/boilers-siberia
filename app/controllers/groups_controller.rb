@@ -1,6 +1,6 @@
 class GroupsController < AdminController
   def index
-    @groups = Group.all
+    @groups = Group.order("id ASC")
   end
 
   def new

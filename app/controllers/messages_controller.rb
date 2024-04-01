@@ -1,6 +1,6 @@
 class MessagesController < AdminController
   def index
-    @messages = Message.where(type_feedback: params[:type])
+    @messages = Message.where(type_feedback: params[:type]).order("id ASC")
   end
 
   def show

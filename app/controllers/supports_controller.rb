@@ -1,6 +1,6 @@
 class SupportsController < AdminController
   def index
-    @supports = Support.all
+    @supports = Support.order("id ASC")
   end
 
   def new

@@ -1,6 +1,6 @@
 class BonusesController < AdminController
   def index
-    @bonuses = Bonuse.all
+    @bonuses = Bonuse.order("id ASC")
   end
 
   def new

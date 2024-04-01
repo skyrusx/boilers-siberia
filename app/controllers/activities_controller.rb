@@ -1,6 +1,6 @@
 class ActivitiesController < AdminController
   def index
-    @activities = Activity.all
+    @activities = Activity.order("id ASC")
   end
 
   def new

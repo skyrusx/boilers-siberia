@@ -3,7 +3,7 @@ class ProductsController < AdminController
   layout "application", only: :show
 
   def index
-    @products = Product.where(product_type: Product::TYPES[params[:type].to_sym])
+    @products = Product.where(product_type: Product::TYPES[params[:type].to_sym]).order("id ASC")
   end
 
   def show
@@ -57,6 +57,6 @@ class ProductsController < AdminController
   private
 
   def product_params
-    params.require(:product).permit(:title, :old_price, :price, :description, :sku, :product_type, :image)
+    params.require(:product).permit(:title, :old_price, :price, :description, :sku, :product_type, images: [])
   end
 end

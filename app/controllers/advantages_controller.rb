@@ -1,6 +1,6 @@
 class AdvantagesController < AdminController
   def index
-    @advantages = Advantage.all
+    @advantages = Advantage.order("id ASC")
   end
 
   def new

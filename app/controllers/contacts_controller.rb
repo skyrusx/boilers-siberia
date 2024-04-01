@@ -1,6 +1,6 @@
 class ContactsController < AdminController
   def index
-    @contacts = Contact.all
+    @contacts = Contact.order("id ASC")
   end
 
   def new

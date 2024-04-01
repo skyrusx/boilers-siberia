@@ -1,6 +1,6 @@
 class SocialLinksController < AdminController
   def index
-    @links = SocialLink.all
+    @links = SocialLink.order("id ASC")
   end
 
   def new
